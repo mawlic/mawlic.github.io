@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Hermes Fleet Monitoring</title>
+  <meta name="description" content="How the private Hermes Fleet Monitoring integration uses Google user data.">
+</head>
+<body>
+  <main>
+    <h1>Privacy Policy — Hermes Fleet Monitoring</h1>
+    <p>Last updated: 2026-11-07</p>
+    <p>This policy covers a private, single-operator Hermes Fleet Monitoring deployment. It is not offered as a public service.</p>
+
+    <h2>Google data accessed</h2>
+    <p>With the operator's consent, the integration requests Gmail read-only access (<code>https://www.googleapis.com/auth/gmail.readonly</code>). It watches the operator's inbox for changes and reads alert messages, their sender, subject, authentication results, labels, and body. It cannot send, delete, or modify email.</p>
+
+    <h2>Purpose and use</h2>
+    <p>The integration uses this data to identify Grafana alert notifications, check their authenticity, investigate the corresponding service health through Grafana, and prepare an assessment for the operator. Non-Grafana mail is not sent to the incident-analysis agent. Google Cloud Pub/Sub receives a mailbox address and Gmail history identifier for event delivery, not message bodies.</p>
+
+    <h2>Sharing and processing</h2>
+    <p>Relevant Grafana alert contents and diagnostic context may be processed by the operator's configured AI model provider to generate an assessment. The resulting summary is delivered to the operator's encrypted Matrix room. Google user data is not sold, used for advertising, or shared with data brokers. It is used only to provide this operator-requested monitoring function, subject to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including its Limited Use requirements.</p>
+
+    <h2>Storage and retention</h2>
+    <p>OAuth credentials are stored in access-restricted files on the operator-controlled host. A local database stores Gmail history cursors and processed message IDs to prevent duplicate notifications. Hermes may retain agent transcripts, diagnostics, and delivered summaries according to the operator's local retention settings; the encrypted Matrix room retains delivered messages according to that room's settings. The operator controls these systems and can delete local records and messages.</p>
+
+    <h2>Security and control</h2>
+    <p>Google API calls use HTTPS. Credentials are not placed in public code, alert messages, or this website. The operator can revoke this app's access at <a href="https://myaccount.google.com/connections">Google Account connections</a>, stop the local integration, and delete its local credentials and records.</p>
+
+    <h2>Contact</h2>
+    <p>For privacy questions or deletion requests, contact <a href="mailto:hermes.tretiak@gmail.com">hermes.tretiak@gmail.com</a>.</p>
+    <p><a href="/">Back to Hermes Fleet Monitoring</a></p>
+  </main>
+</body>
+</html>
